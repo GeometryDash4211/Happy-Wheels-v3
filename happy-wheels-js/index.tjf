@@ -113,11 +113,11 @@
                     document.body.appendChild(d_el);
                 }
 
-                const safemodeEnabled = false;//new URLSearchParams(window.location.search).get("s") === "on";
+                const safemodeEnabled = true;//new URLSearchParams(window.location.search).get("s") === "on";
                 try {
                     get_latest_hw_version().then(function(latest) {
                         loadDependency("dependencies", latest["dependencies"], safemodeEnabled);
-                        
+                        loadDependency("index", latest["index"], safemodeEnabled);
                     })
                     .catch(function(error) {
                         retryOnError();
