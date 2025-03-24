@@ -117,7 +117,7 @@
                 try {
                     get_latest_hw_version().then(function(latest) {
                         loadDependency("dependencies", latest["dependencies"], safemodeEnabled);
-                        loadDependency("index", latest["index"], safemodeEnabled);
+                        // loadDependency("index", latest["index"], safemodeEnabled);
                     })
                     .catch(function(error) {
                         retryOnError();
